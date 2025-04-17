@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Web site created using create-react-app" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>Second Serving</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!--  Custom Colors for Second Serving -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              onyx: '#32373B',
+              spaceGray: '#4A5859',
+              paleDog: '#F4D6CC',
+              hotRed: '#C83E4D',
+              chileRed: '#D00000',
+              poppyPink: '#E0777D',
+              tangerine: '#FFAF87',
+              salmon: '#FF8E72',
+              selectiveYellow: '#FFBA08',
+              streetYellow: '#F4B860',
+              peachYellow: '#FFE19C',
+              nyanza: '#EDFFD9',
+              pineGreen: '#136F63',
+              steelBlue: '#3F88C5',
+              prussianBlue: '#032B43',
+            }
+          }
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    
+    <!-- This is what React needs to hook into -->
+    <div id="root"></div>
+  </body>
+</html>
