@@ -1,14 +1,21 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LoginRegister from './pages/LoginRegister';
+import { motion } from 'framer-motion'
 import './App.css';
 
 function Home() {
   return (
     <div className="bg-hotRed text-white min-h-screen flex flex-col items-center justify-center px-4">
-      <img
+      <motion.img
         src={`${process.env.PUBLIC_URL}/secondServingLogo.png`}
         alt="Second Serving Logo"
         className="w-60 h-60 mb-6"
+        animate={{ scale: [1, 1.05, 1] }}
+        transition={{
+          duration: 2, 
+          ease: 'easeInOut',
+          repeat: Infinity 
+        }}
       />
       <h1 className="text-4xl md:text-5xl font-bold mb-4 text-streetYellow">
         Welcome to Second Serving
