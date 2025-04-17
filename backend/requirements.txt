@@ -1,0 +1,6 @@
+make sure you initalize venv before beginning installation, then install:
+- fastapi
+- uvicorn[standard]
+- pydantic
+
+in the routes, make sure __init__.py and health.py is there or the code in main.py breaks 
