@@ -6,6 +6,7 @@ import Dashboard from './pages/Dashboard';
 import Feed from './pages/Feed';
 import Wishlist from './pages/Wishlist';
 import Chatbot from './pages/Chatbot';
+import MapView from './pages/MapView';
 import { motion } from 'framer-motion';
 import './App.css';
 
@@ -78,6 +79,7 @@ function App() {
         <Route path="/feed" element={<Feed />} />
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/chatbot" element={<Chatbot />} />
+        <Route path="/MapView" element={<MapView />} />
       </Routes>
     </Router>
   );
