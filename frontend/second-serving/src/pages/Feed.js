@@ -50,7 +50,7 @@ function Feed() {
   };
 
   return (
-    <div className="min-h-screen bg-hotRed p-6 text-prussianBlue">
+    <div className="min-h-screen bg-paleDog p-6 text-prussianBlue">
       <h2 className="text-3xl font-bold mb-4 text-center">Available Donations</h2>
 
       {/* Filters */}
