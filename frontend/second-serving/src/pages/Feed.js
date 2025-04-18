@@ -12,7 +12,7 @@ function Feed() {
   useEffect(() => {
     const fetchDonations = async () => {
       try {
-        const res = await fetch('https://second-serving-api.onrender.com/api/donations');
+        const res = await fetch('${process.env.REACT_APP_API_BASE}/api/donations');
         const data = await res.json();
         setDonations(data);
         setFiltered(data);

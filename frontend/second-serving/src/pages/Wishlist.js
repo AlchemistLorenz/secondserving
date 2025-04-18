@@ -21,7 +21,7 @@ function Wishlist() {
         }
 
         try {
-            const res = await fetch('https://second-serving-api.onrender.com/api/wishlist', {
+            const res = await fetch('${process.env.REACT_APP_API_BASE}/api/wishlist', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(form),

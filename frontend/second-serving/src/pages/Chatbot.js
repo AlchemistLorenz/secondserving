@@ -18,7 +18,7 @@ function Chatbot() {
     setInput('');
 
     try {
-      const res = await fetch('https://second-serving-api.onrender.com/api/chat', {
+      const res = await fetch('${process.env.REACT_APP_API_BASE}/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: input }),

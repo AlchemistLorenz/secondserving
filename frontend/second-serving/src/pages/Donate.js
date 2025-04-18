@@ -18,7 +18,7 @@ function Donate() {
     e.preventDefault();
 
     // Replace with Flask backend endpoint when we have it 
-    const res = await fetch('https://second-serving-api.onrender.com/api/donations', {
+    const res = await fetch('${process.env.REACT_APP_API_BASE}/api/donations', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),

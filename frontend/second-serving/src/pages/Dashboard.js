@@ -13,8 +13,8 @@ function Dashboard() {
     const fetchDashboardData = async () => {
       try {
         const [donationsRes, claimsRes] = await Promise.all([
-          fetch(`https://second-serving-api.onrender.com/api/my-donations?email=${userEmail}`),
-          fetch(`https://second-serving-api.onrender.com/api/my-claims?email=${userEmail}`),
+          fetch(`${process.env.REACT_APP_API_BASE}/api/login`),
+          fetch(`${process.env.REACT_APP_API_BASE}/api/register`),
         ]);
 
         const donationsData = await donationsRes.json();
