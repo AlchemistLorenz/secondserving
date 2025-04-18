@@ -15,7 +15,7 @@ function MapView() {
                     loading="lazy"
                     className="rounded shadow-md border border-gray-300"
                 ></iframe>
-                <p className="mt-4 text-center text-gray-700 text-sm">
+                <p className="mt-4 text-center text-streetYellow text-sm">
                     This map shows nearby shelters where you can drop off your donations.
                 </p>
             </div>
