@@ -34,8 +34,13 @@ function Donate() {
   };
 
   return (
-    <div className="min-h-screen bg-paleDog flex flex-col items-center justify-center px-4 py-8">
-      <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
+    <div className="min-h-screen bg-hotRed flex flex-col items-center justify-center px-4 py-8">
+      <img
+        src={`${process.env.PUBLIC_URL}/secondServingLogo.png`}
+        alt="Second Serving Logo"
+        className="w-60 h-60 mb-5"
+      />
+      <div className="bg-paleDog p-6 rounded-lg shadow-md w-full max-w-md">
         <h2 className="text-2xl font-bold mb-4 text-prussianBlue">Submit a Donation</h2>
 
         <form onSubmit={handleSubmit} className="space-y-4">
