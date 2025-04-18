@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+pydantic
+flask
+flask-cors
+pymongo
+python-dotenv
+bcrypt
+Faker
+faker-food
