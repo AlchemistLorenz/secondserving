@@ -2,6 +2,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LoginRegister from './pages/LoginRegister';
 import Donate from './pages/Donate';
+import Dashboard from './pages/Dashboard';
 import { motion } from 'framer-motion';
 import './App.css';
 
@@ -75,6 +76,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<LoginRegister />} />
         <Route path="/donate" element={<Donate />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </Router>
   );
