@@ -1,7 +1,7 @@
 services:
   - type: web
     name: second-serving-backend
-    env: python
+    runtime: python
     buildCommand: "pip install -r requirements.txt"
     startCommand: "python backend/app.py"
     plan: free
