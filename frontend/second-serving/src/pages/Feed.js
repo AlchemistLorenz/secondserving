@@ -50,8 +50,8 @@ function Feed() {
   };
 
   return (
-    <div className="min-h-screen bg-paleDog p-6 text-prussianBlue">
-      <h2 className="text-3xl font-bold mb-4 text-center">Available Donations</h2>
+    <div className="min-h-screen bg-hotRed p-6 text-prussianBlue">
+      <h2 className="text-3xl font-bold mb-4 text-center text-streetYellow">Available Donations</h2>
 
       {/* Filters */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
@@ -95,7 +95,7 @@ function Feed() {
             </div>
           ))
         ) : (
-          <p className="text-gray-600">No matching donations found.</p>
+          <p className="text-streetYellow">No matching donations found.</p>
         )}
       </div>
     </div>
