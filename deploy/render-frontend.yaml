@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: second-serving-frontend
+    runtime: static
+    buildCommand: "npm install && npm run build"
+    staticPublishPath: build
+    plan: free
+    envVars:
+      - key: REACT_APP_API_URL
+        value: "http://localhost:3000"  # Replace with actual API URL
+
+
+  
