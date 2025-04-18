@@ -35,13 +35,13 @@ function LoginRegister() {
         src={`${process.env.PUBLIC_URL}/secondServingLogo.png`}
         alt="Second Serving Logo"
         className="w-60 h-60 mb-6"
-        animate={{ scale: [1, 1.05, 1] }}
-        transition={{
-          duration: 2,
-          ease: 'easeInOut',
-          repeat: Infinity,
-          repeatType: 'loop'
-        }}
+         animate={{ scale: [1, 1.05, 1] }}
+         transition={{
+           duration: 2,
+           ease: 'easeInOut',
+           repeat: Infinity,
+           repeatType: 'loop'
+         }}
       />
       <h2 className="text-3xl font-bold mb-6 text-streetYellow">
         {mode === 'login' ? 'Log In' : 'Create Account'}
