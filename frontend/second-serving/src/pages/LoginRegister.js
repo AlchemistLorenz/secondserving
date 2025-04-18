@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
 function LoginRegister() {
   const [mode, setMode] = useState('login');
@@ -30,10 +31,17 @@ function LoginRegister() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-hotRed px-4 text-white">
-        <img
+        <motion.img
         src={`${process.env.PUBLIC_URL}/secondServingLogo.png`}
         alt="Second Serving Logo"
-        className="w-60 h-60 mb-5"
+        className="w-60 h-60 mb-6"
+        animate={{ scale: [1, 1.05, 1] }}
+        transition={{
+          duration: 2,
+          ease: 'easeInOut',
+          repeat: Infinity,
+          repeatType: 'loop'
+        }}
       />
       <h2 className="text-3xl font-bold mb-6 text-streetYellow">
         {mode === 'login' ? 'Log In' : 'Create Account'}
