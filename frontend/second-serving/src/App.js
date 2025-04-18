@@ -13,7 +13,7 @@ function Home() {
       <motion.div
         initial={{ y: -200, opacity: 0, rotate: -5 }}
         animate={{ y: 0, opacity: 1, rotate: 0 }}
-        transition={{ type: 'spring', stiffness: 120, damping: 16, delay: 0.1 }}
+        transition={{ type: 'string', stiffness: 120, damping: 16, delay: 0.1 }}
       >    
       <motion.img
          src={`${process.env.PUBLIC_URL}/secondServingLogo.png`}
