@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: second-serving-backend
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python backend/app.py"
+    plan: free
+    envVars:
+      - key: MONGODB_URI
+        value: ${MONGODB_URI}
+      - key: DB_NAME
+        value: ${DB_NAME}
+      - key: OPEN_AI_API_KEY
+        value: ${OPENAI_API_KEY}
+
+
+  
