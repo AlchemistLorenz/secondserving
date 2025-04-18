@@ -33,13 +33,13 @@ function Dashboard() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-paleDog p-6 text-prussianBlue">
+    <div className="min-h-screen bg-hotRed p-6 text-prussianBlue">
       <h2 className="text-3xl font-bold mb-4 text-center">My Dashboard</h2>
 
       {loading ? (
         <p className="text-center">Loading...</p>
       ) : error ? (
-        <p className="text-center text-red-500">{error}</p>
+        <p className="text-center text-">{error}</p>
       ) : (
         <div className="grid md:grid-cols-2 gap-8">
           {/* My Donations */}

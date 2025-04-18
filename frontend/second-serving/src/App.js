@@ -3,7 +3,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LoginRegister from './pages/LoginRegister';
 import Donate from './pages/Donate';
 import Dashboard from './pages/Dashboard';
-import Feed from './pages/Dashboard';
+import Feed from './pages/Feed';
+import Wishlist from './pages/Wishlist';
+import Chatbot from './pages/Chatbot';
+import MapView from './pages/MapView';
 import { motion } from 'framer-motion';
 import './App.css';
 
@@ -13,7 +16,7 @@ function Home() {
       <motion.div
         initial={{ y: -200, opacity: 0, rotate: -5 }}
         animate={{ y: 0, opacity: 1, rotate: 0 }}
-        transition={{ type: 'spring', stiffness: 120, damping: 16, delay: 0.1 }}
+        transition={{ type: 'string', stiffness: 120, damping: 16, delay: 0.1 }}
       >    
       <motion.img
          src={`${process.env.PUBLIC_URL}/secondServingLogo.png`}
@@ -74,6 +77,9 @@ function App() {
         <Route path="/donate" element={<Donate />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/feed" element={<Feed />} />
+        <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/chatbot" element={<Chatbot />} />
+        <Route path="/MapView" element={<MapView />} />
       </Routes>
     </Router>
   );
