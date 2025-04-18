@@ -36,3 +36,35 @@
     transform: rotate(360deg);
   }
 }
+
+.steam-text {
+  position: relative;
+  display: inline-block;
+}
+.steam-text::before,
+.steam-text::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 50%;
+  filter: blur(6px);
+  animation: steam-rise 2.5s infinite ease-out;
+}
+.steam-text::before {
+  left: 20%;
+  width: 16px;
+  height: 16px;
+  animation-delay: 0.3s;
+}
+.steam-text::after {
+  left: 60%;
+  width: 12px;
+  height: 12px;
+  animation-delay: 0.8s;
+}
+@keyframes steam-rise {
+  0%   { opacity: 0;   transform: translateY(0)   scale(0.6); }
+  40%  { opacity: 0.8; transform: translateY(-25px) scale(1); }
+  100% { opacity: 0;   transform: translateY(-60px) scale(1.2); }
+}
