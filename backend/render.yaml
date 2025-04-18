@@ -9,3 +9,12 @@ services:
         value: mongodb+srv://natashakippur:Jazminrox11$@secondserving.zqbxiye.mongodb.net/
       - key: SECRET_KEY
         value: daverocks
+  
+  - type: web
+    name: second-serving-frontend
+    env: static
+    staticPublishPath: second-serving/dist
+    buildCommand: npm install && npm run build
+    envVars:
+      - key: REACT_APP_API_BASE
+        value: https://secondserving-1ks1.onrender.com

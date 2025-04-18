@@ -13,8 +13,8 @@ function Dashboard() {
     const fetchDashboardData = async () => {
       try {
         const [donationsRes, claimsRes] = await Promise.all([
-          fetch(`${process.env.REACT_APP_API_BASE}/api/login`),
-          fetch(`${process.env.REACT_APP_API_BASE}/api/register`),
+          fetch(`${process.env.REACT_APP_API_BASE}/api/my-donations?email=${userEmail}`),
+          fetch(`${process.env.REACT_APP_API_BASE}/api/my-claims?email=${userEmail}`),
         ]);
 
         const donationsData = await donationsRes.json();
@@ -39,7 +39,7 @@ function Dashboard() {
       {loading ? (
         <p className="text-center">Loading...</p>
       ) : error ? (
-        <p className="text-center text-">{error}</p>
+        <p className="text-center text-red-600">{error}</p>
       ) : (
         <div className="grid md:grid-cols-2 gap-8">
           {/* My Donations */}

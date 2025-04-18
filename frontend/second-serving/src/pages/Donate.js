@@ -1,111 +1,105 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-function Donate() {
-  const [formData, setFormData] = useState({
-    title: '',
-    description: '',
-    quantity: '',
+function Feed() {
+  const [donations, setDonations] = useState([]);
+  const [filtered, setFiltered] = useState([]);
+  const [filters, setFilters] = useState({
+    search: '',
     location: '',
+    minQuantity: ''
   });
 
-  const [message, setMessage] = useState('');
+  useEffect(() => {
+    const fetchDonations = async () => {
+      try {
+        const res = await fetch(`${process.env.REACT_APP_API_BASE}/api/donations`);
+        const data = await res.json();
+        setDonations(data);
+        setFiltered(data);
+      } catch (err) {
+        console.error('Failed to load feed.');
+      }
+    };
+    fetchDonations();
+  }, []);
+
+  useEffect(() => {
+    let results = [...donations];
+
+    if (filters.search) {
+      results = results.filter(item =>
+        item.title.toLowerCase().includes(filters.search.toLowerCase())
+      );
+    }
+
+    if (filters.location) {
+      results = results.filter(item =>
+        item.location.toLowerCase().includes(filters.location.toLowerCase())
+      );
+    }
+
+    if (filters.minQuantity) {
+      results = results.filter(item => item.quantity >= parseInt(filters.minQuantity));
+    }
+
+    setFiltered(results);
+  }, [filters, donations]);
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    // Replace with Flask backend endpoint when we have it 
-    const res = await fetch('${process.env.REACT_APP_API_BASE}/api/donations', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData),
-    });
-
-    const data = await res.json();
-    if (res.ok) {
-      setMessage('Donation submitted successfully!');
-      setFormData({ title: '', description: '', quantity: '', location: '' });
-    } else {
-      setMessage(data.message || 'Something went wrong.');
-    }
+    setFilters({ ...filters, [e.target.name]: e.target.value });
   };
 
   return (
-    <div className="min-h-screen bg-hotRed flex flex-col items-center justify-center px-4 py-8">
-      <img
-        src={`${process.env.PUBLIC_URL}/secondServingLogo.png`}
-        alt="Second Serving Logo"
-        className="w-60 h-60 mb-5"
-      />
-      <div className="bg-paleDog p-6 rounded-lg shadow-md w-full max-w-md">
-        <h2 className="text-2xl font-bold mb-4 text-prussianBlue">Submit a Donation</h2>
+    <div className="min-h-screen bg-hotRed p-6 text-prussianBlue">
+      <h2 className="text-3xl font-bold mb-4 text-center text-streetYellow">Available Donations</h2>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label className="block font-medium text-sm">Title</label>
-            <input
-              type="text"
-              name="title"
-              value={formData.title}
-              onChange={handleChange}
-              className="w-full border border-gray-300 rounded px-3 py-2"
-              required
-            />
-          </div>
+      {/* Filters */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        <input
+          type="text"
+          name="search"
+          placeholder="Search by title..."
+          onChange={handleChange}
+          value={filters.search}
+          className="p-2 rounded border"
+        />
 
-          <div>
-            <label className="block font-medium text-sm">Description</label>
-            <textarea
-              name="description"
-              value={formData.description}
-              onChange={handleChange}
-              rows={3}
-              className="w-full border border-gray-300 rounded px-3 py-2"
-              required
-            />
-          </div>
+        <input 
+          type="text"
+          name="location"
+          placeholder="Filter by location..."
+          onChange={handleChange}
+          value={filters.location}
+          className="p-2 rounded border"
+        />
 
-          <div>
-            <label className="block font-medium text-sm">Quantity</label>
-            <input
-              type="number"
-              name="quantity"
-              value={formData.quantity}
-              onChange={handleChange}
-              className="w-full border border-gray-300 rounded px-3 py-2"
-              required
-            />
-          </div>
+        <input 
+          type="number"
+          name="minQuantity"
+          placeholder="Min quantity"
+          onChange={handleChange}
+          value={filters.minQuantity}
+          className="p-2 rounded border"
+        />    
+      </div>
 
-          <div>
-            <label className="block font-medium text-sm">Location</label>
-            <input
-              type="text"
-              name="location"
-              value={formData.location}
-              onChange={handleChange}
-              className="w-full border border-gray-300 rounded px-3 py-2"
-              required
-            />
-          </div>
-
-          <button
-            type="submit"
-            className="w-full bg-selectiveYellow text-black font-bold py-2 px-4 rounded hover:bg-yellow-400"
-          >
-            Submit
-          </button>
-
-          {message && (
-            <p className="mt-4 text-center text-pineGreen font-medium">{message}</p>
-          )}
-        </form>
+      {/* Listing Feed */}
+      <div className="grid gap-4">
+        {filtered.length > 0 ? (
+          filtered.map((item, index) => (
+            <div key={index} className="bg-white p-4 rounded shadow">
+              <h3 className="text-xl font-bold">{item.title}</h3>
+              <p>{item.description}</p>
+              <p><strong>Quantity:</strong> {item.quantity}</p>
+              <p><strong>Location:</strong> {item.location}</p>
+            </div>
+          ))
+        ) : (
+          <p className="text-streetYellow">No matching donations found.</p>
+        )}
       </div>
     </div>
   );
 }
 
-export default Donate;
+export default Feed;
