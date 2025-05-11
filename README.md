@@ -64,8 +64,11 @@ Completed phase 1, will begin phase 2 with the following goals:
 
 ## Contributions
 **Lorenz Wilkins** | Project Coordinator, Full-Stack Developer (System Design, Team Sync, Frontend-Backend Integrator)
+
 **Natasha Kippur** | Frontend & UI/Render lead (React UI, Chatbot Integration, Styling, Deployment)
+
 **Byron Orellana** | Database & Devops Engineer (MongoDB Schema, Seed Data, Configs)
+
 **Kevin Gonzalez** | Backend & AI Endpoint Lead (Flask API, FastAPI Lead, OpenAI integration, Routes)
 
 Created at **AurariaHack 2025** by CU Denver students 
