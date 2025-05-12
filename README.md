@@ -63,12 +63,12 @@ Completed phase 1, will begin phase 2 with the following goals:
 - Partnerships with shelters, grocery chains and nonprofits.
 
 ## Contributions
-**Lorenz Wilkins** | Project Coordinator, Full-Stack Developer (System Design, Team Sync, Frontend-Backend Integrator)
+**Lorenz Wilkins** | Project Coordinator, Full-Stack Developer (System Design, Team Sync, Frontend-Backend Integrator) | LinkedIn: https://www.linkedin.com/in/lorenz-wilkins/
 
-**Natasha Kippur** | Frontend & UI/Render lead (React UI, Chatbot Integration, Styling, Deployment)
+**Natasha Kippur** | Frontend & UI/Render lead (React UI, Chatbot Integration, Styling, Deployment) | LinkedIn: 
 
-**Byron Orellana** | Database & Devops Engineer (MongoDB Schema, Seed Data, Configs)
+**Byron Orellana** | Database & Devops Engineer (MongoDB Schema, Seed Data, Configs) | LinkedIn: 
 
-**Kevin Gonzalez** | Backend & AI Endpoint Lead (Flask API, FastAPI Lead, OpenAI integration, Routes)
+**Kevin Gonzalez** | Backend & AI Endpoint Lead (Flask API, FastAPI Lead, OpenAI integration, Routes) | LinkedIn: 
 
 Created at **AurariaHack 2025** by CU Denver students 
