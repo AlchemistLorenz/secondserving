@@ -65,10 +65,10 @@ Completed phase 1, will begin phase 2 with the following goals:
 ## Contributions
 **Lorenz Wilkins** | Project Coordinator, Full-Stack Developer (System Design, Team Sync, Frontend-Backend Integrator) | LinkedIn: https://www.linkedin.com/in/lorenz-wilkins/
 
-**Natasha Kippur** | Frontend & UI/Render lead (React UI, Chatbot Integration, Styling, Deployment) | LinkedIn: 
+**Natasha Kippur** | Frontend & UI/Render lead (React UI, Chatbot Integration, Styling, Deployment) | LinkedIn: https://www.linkedin.com/in/natasha-kippur-b0b61a285/
 
-**Byron Orellana** | Database & Devops Engineer (MongoDB Schema, Seed Data, Configs) | LinkedIn: 
+**Byron Orellana** | Database & Devops Engineer (MongoDB Schema, Seed Data, Configs) | LinkedIn: https://www.linkedin.com/in/byron-orellana-308aa22a5/
 
-**Kevin Gonzalez** | Backend & AI Endpoint Lead (Flask API, FastAPI Lead, OpenAI integration, Routes) | LinkedIn: 
+**Kevin Gonzalez** | Backend & AI Endpoint Lead (Flask API, FastAPI Lead, OpenAI integration, Routes) | LinkedIn: https://www.linkedin.com/in/kevin-g-gonzalez/
 
 Created at **AurariaHack 2025** by CU Denver students 
